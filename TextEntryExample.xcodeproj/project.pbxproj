@@ -14,6 +14,8 @@
 		897DECA91F7177F6001FDC8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897DECA71F7177F6001FDC8A /* LaunchScreen.storyboard */; };
 		897DECB41F7177F7001FDC8A /* TextEntryExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DECB31F7177F7001FDC8A /* TextEntryExampleTests.swift */; };
 		897DECBF1F7177F7001FDC8A /* TextEntryExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DECBE1F7177F7001FDC8A /* TextEntryExampleUITests.swift */; };
+		897DECCD1F718216001FDC8A /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DECCC1F718216001FDC8A /* TicTacToe.swift */; };
+		897DECCF1F730282001FDC8A /* GuessMyNumberforApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DECCE1F730282001FDC8A /* GuessMyNumberforApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		897DECBA1F7177F7001FDC8A /* TextEntryExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextEntryExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897DECBE1F7177F7001FDC8A /* TextEntryExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryExampleUITests.swift; sourceTree = "<group>"; };
 		897DECC01F7177F7001FDC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		897DECCC1F718216001FDC8A /* TicTacToe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToe.swift; path = ../TicTacToe.swift; sourceTree = "<group>"; };
+		897DECCE1F730282001FDC8A /* GuessMyNumberforApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessMyNumberforApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +101,9 @@
 		897DEC9D1F7177F6001FDC8A /* TextEntryExample */ = {
 			isa = PBXGroup;
 			children = (
+				897DECCC1F718216001FDC8A /* TicTacToe.swift */,
 				897DEC9E1F7177F6001FDC8A /* AppDelegate.swift */,
+				897DECCE1F730282001FDC8A /* GuessMyNumberforApp.swift */,
 				897DECA01F7177F6001FDC8A /* ViewController.swift */,
 				897DECA21F7177F6001FDC8A /* Main.storyboard */,
 				897DECA51F7177F6001FDC8A /* Assets.xcassets */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897DECCD1F718216001FDC8A /* TicTacToe.swift in Sources */,
 				897DECA11F7177F6001FDC8A /* ViewController.swift in Sources */,
+				897DECCF1F730282001FDC8A /* GuessMyNumberforApp.swift in Sources */,
 				897DEC9F1F7177F6001FDC8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,7 @@
 				897DECC51F7177F7001FDC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		897DECC61F7177F7001FDC8A /* Build configuration list for PBXNativeTarget "TextEntryExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				897DECC81F7177F7001FDC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		897DECC91F7177F7001FDC8A /* Build configuration list for PBXNativeTarget "TextEntryExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				897DECCB1F7177F7001FDC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
