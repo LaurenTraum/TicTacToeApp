@@ -26,7 +26,6 @@ class TicTacToe{
 
     //get user choice
     func getUserClaim(userClaim:Int){ //prompt for guess
-        var userClaim = 0
         if (!taken.contains(userClaim) && userClaim < 10 && userClaim > 0){
             taken.insert(userClaim)
             let i = notTaken.index(of: userClaim)
@@ -62,7 +61,7 @@ class TicTacToe{
             
             return "computer wins"
             
-        }else if notTaken.contains(0){
+        }else if notTaken.count == 0 {
             return "cats game"
         }else{
             return "keep on going!!"
@@ -75,7 +74,7 @@ class TicTacToe{
         var computerSpot = 0
         getUserClaim(userClaim: userClaim) // user turn
         var result = chooseWinner()
-        if result == "game not over" { // if user hasn't won...
+        if result == "keep on going!!" { // if user hasn't won...
             computerSpot = getComputerClaim() // computer turn
             result = chooseWinner()
         }

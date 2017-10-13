@@ -78,69 +78,50 @@ class ViewController: UIViewController {
         let result = game.playGame(userClaim: sender.tag)  // use result to update tic tac toe board and label at top
         label.text = result.0
         
-        switch sender.tag
-        {
-        case 1:
+        
+        if sender.tag == 1{
             self.spot1.setTitle("x", for: .normal)
-        case 2:
+        }else if sender.tag == 2{
             self.spot2.setTitle("x", for: .normal)
-        case 3:
+        }else if sender.tag == 3{
             self.spot3.setTitle("x", for: .normal)
-        case 4:
+        }else if sender.tag == 4{
             self.spot4.setTitle("x", for: .normal)
-        case 5:
+        }else if sender.tag == 5{
             self.spot5.setTitle("x", for: .normal)
-        case 6:
+        }else if sender.tag == 6{
             self.spot6.setTitle("x", for: .normal)
-        case 7:
+        }else if sender.tag == 7{
             self.spot7.setTitle("x", for: .normal)
-        case 8:
+        }else if sender.tag == 8{
             self.spot8.setTitle("x", for: .normal)
-        case 9:
+        }else if sender.tag == 9{
             self.spot9.setTitle("x", for: .normal)
-        default:
-            print("something went wrong")
-            
-        switch result.1
-        {
-        case 1:
-            self.spot1.setTitle("o", for: .normal)
-        case 2:
-            self.spot2.setTitle("o", for: .normal)
-        case 3:
-            self.spot3.setTitle("o", for: .normal)
-        case 4:
-            self.spot4.setTitle("o", for: .normal)
-        case 5:
-            self.spot5.setTitle("o", for: .normal)
-        case 6:
-            self.spot6.setTitle("o", for: .normal)
-        case 7:
-            self.spot7.setTitle("o", for: .normal)
-        case 8:
-            self.spot8.setTitle("o", for: .normal)
-        case 9:
-            self.spot9.setTitle("o", for: .normal)
-        default:
-            print("computer couldn't take move")
-            
-            
         }
-        
-        
-        //self.spot1.setTitle("x", for: .usertook)
-        
-        
-        
-        //[spot1.setTitle
             
-           // setTitle:@"-" forState:UIControlStateNormal];
-        //[spot1 setTitle:@"X" forState:UIControlStateSelected];
-        //spot(userClaim) setTitle:@"-" forState:
+        if (result.1 == 1){
+            self.spot1.setTitle("o", for: .normal)
+        }else if result.1 == 2{
+            self.spot2.setTitle("o", for: .normal)
+        }else if result.1 == 3{
+            self.spot3.setTitle("o", for: .normal)
+        }else if result.1 == 4{
+            self.spot4.setTitle("o", for: .normal)
+        }else if result.1 == 5{
+            self.spot5.setTitle("o", for: .normal)
+        }else if result.1 == 6{
+            self.spot6.setTitle("o", for: .normal)
+        }else if result.1 == 7{
+            self.spot7.setTitle("o", for: .normal)
+        }else if result.1 == 8{
+            self.spot8.setTitle("o", for: .normal)
+        }else if result.1 == 9{
+            self.spot9.setTitle("o", for: .normal)
+        }else{
+            print("something went wrong")
+        }
+ 
     }
-
-
     
-    }
 }
 
