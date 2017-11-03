@@ -24,8 +24,8 @@ class TicTacToe{
     let win8: Set = [3, 5, 7]
 
 
-    //get user choice
-    func getUserClaim(userClaim:Int){ //prompt for guess
+    //process user turn
+    func getUserClaim(userClaim:Int){
         if (!taken.contains(userClaim) && userClaim < 10 && userClaim > 0){
             taken.insert(userClaim)
             let i = notTaken.index(of: userClaim)
@@ -41,7 +41,7 @@ class TicTacToe{
 
     //generate random computer choice
 
-    func getComputerClaim() -> Int {  //modify to guess mystery number
+    func getComputerClaim() -> Int {  //get and process computer turn
         let i = Int(arc4random_uniform(UInt32(notTaken.count)))
         let computerClaim = notTaken[i]
         taken.insert(computerClaim)  //look up
@@ -79,5 +79,9 @@ class TicTacToe{
             result = chooseWinner()
         }
         return (result, computerSpot)
+    }
+    func playGameComputerFirst()  -> (String, Int)  {  //no changes
+        let computerSpot = getComputerClaim()
+        return ("it's your turn", computerSpot)
     }
 }

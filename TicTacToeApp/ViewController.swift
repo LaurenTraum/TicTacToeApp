@@ -8,8 +8,11 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
     var game = TicTacToe()  //Whyhow
+    var whoFirst = 0 // this means computer goes first
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -40,7 +43,15 @@ class ViewController: UIViewController {
         self.spot8.setTitle("-", for: .normal)
         self.spot9.setTitle("-", for: .normal)
         
+        if whoFirst == 0{
+            let chosen = game.playGameComputerFirst()
+            markBoardForComputer(chosen: chosen.1)
+        }
+        
     }
+    // call playGameComputerFirst from viewDidAppear if computer takes first turn
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,19 +77,38 @@ class ViewController: UIViewController {
         self.spot7.setTitle("-", for: .normal)
         self.spot8.setTitle("-", for: .normal)
         self.spot9.setTitle("-", for: .normal)
+        
+        if whoFirst == 0{
+            let chosen = game.playGameComputerFirst()
+            markBoardForComputer(chosen: chosen.1)
+        }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func changeSettings(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Change Setting?", message: "This will restart your game", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "settingsViewController", sender: self);})
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion:nil)
+
+        
+    }
+    
     @IBAction func userTakesTurnVisual(_ sender: UIButton) {
+        //added whoPlay as global variable, does that make sense?
         //how to get button ID sender action/how to change a buttons state/label?
         let result = game.playGame(userClaim: sender.tag)  // use result to update tic tac toe board and label at top
-        label.text = result.0
+    
+        label.text = result.0 // first item in result, which is the message to display
         
-        
+        // update the appearance of the board for user's choice
         if sender.tag == 1{
             self.spot1.setTitle("x", for: .normal)
         }else if sender.tag == 2{
@@ -98,30 +128,36 @@ class ViewController: UIViewController {
         }else if sender.tag == 9{
             self.spot9.setTitle("x", for: .normal)
         }
+    
+        // update the appearance of the board for computer's choice
+        markBoardForComputer(chosen: result.1)
+    }
             
-        if (result.1 == 1){
+    
+    func markBoardForComputer(chosen: Int){
+        if (chosen == 1){
             self.spot1.setTitle("o", for: .normal)
-        }else if result.1 == 2{
+        }else if chosen == 2{
             self.spot2.setTitle("o", for: .normal)
-        }else if result.1 == 3{
+        }else if chosen == 3{
             self.spot3.setTitle("o", for: .normal)
-        }else if result.1 == 4{
+        }else if chosen == 4{
             self.spot4.setTitle("o", for: .normal)
-        }else if result.1 == 5{
+        }else if chosen == 5{
             self.spot5.setTitle("o", for: .normal)
-        }else if result.1 == 6{
+        }else if chosen == 6{
             self.spot6.setTitle("o", for: .normal)
-        }else if result.1 == 7{
+        }else if chosen == 7{
             self.spot7.setTitle("o", for: .normal)
-        }else if result.1 == 8{
+        }else if chosen == 8{
             self.spot8.setTitle("o", for: .normal)
-        }else if result.1 == 9{
+        }else if chosen == 9{
             self.spot9.setTitle("o", for: .normal)
         }else{
             print("something went wrong")
         }
- 
     }
-    
 }
+    
+
 
