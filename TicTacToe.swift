@@ -55,11 +55,11 @@ class TicTacToe{
     func chooseWinner() -> String{ // after a turn has been taken, check if there's a winner
         
         if (userDominion.isSuperset(of: win1) || userDominion.isSuperset(of: win2) || userDominion.isSuperset(of: win3)) || userDominion.isSuperset(of: win4) || userDominion.isSuperset(of: win5) || userDominion.isSuperset(of: win6) || userDominion.isSuperset(of: win7) || userDominion.isSuperset(of: win8){
-            return "user wins"
+            return "WOW! You Won!!!"
             
         } else if (computerDominion.isSuperset(of: win1) || computerDominion.isSuperset(of: win2) || computerDominion.isSuperset(of: win3)) || computerDominion.isSuperset(of: win4) || computerDominion.isSuperset(of: win5) || computerDominion.isSuperset(of: win6) || computerDominion.isSuperset(of: win7) || computerDominion.isSuperset(of: win8){
             
-            return "computer wins"
+            return "The computer beat you. RESILLIANCE"
             
         }else if notTaken.count == 0 {
             return "cats game"

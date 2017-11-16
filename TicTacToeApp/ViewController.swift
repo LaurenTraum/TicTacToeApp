@@ -34,14 +34,23 @@ class ViewController: UIViewController {
         game.notTaken = [1,2,3,4,5,6,7,8,9]
         label.text = "Lets play tic-tac-toe! Claim your space!"
         self.spot1.setTitle("-", for: .normal)
+        spot1.isEnabled = true
         self.spot2.setTitle("-", for: .normal)
+        spot2.isEnabled = true
         self.spot3.setTitle("-", for: .normal)
+        spot3.isEnabled = true
         self.spot4.setTitle("-", for: .normal)
+        spot4.isEnabled = true
         self.spot5.setTitle("-", for: .normal)
+        spot5.isEnabled = true
         self.spot6.setTitle("-", for: .normal)
+        spot6.isEnabled = true
         self.spot7.setTitle("-", for: .normal)
+        spot7.isEnabled = true
         self.spot8.setTitle("-", for: .normal)
+        spot8.isEnabled = true
         self.spot9.setTitle("-", for: .normal)
+        spot9.isEnabled = true
         
         if whoFirst == 0{
             let chosen = game.playGameComputerFirst()
@@ -93,13 +102,15 @@ class ViewController: UIViewController {
 
     @IBAction func changeSettings(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Change Setting?", message: "This will restart your game", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
-            self.performSegue(withIdentifier: "settingsViewController", sender: self);})
-        alertController.addAction(OKAction)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)})
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:nil)
-
         
     }
+    
     
     @IBAction func userTakesTurnVisual(_ sender: UIButton) {
         //added whoPlay as global variable, does that make sense?
@@ -111,22 +122,31 @@ class ViewController: UIViewController {
         // update the appearance of the board for user's choice
         if sender.tag == 1{
             self.spot1.setTitle("x", for: .normal)
+            spot1.isEnabled = false
         }else if sender.tag == 2{
             self.spot2.setTitle("x", for: .normal)
+            spot2.isEnabled = false
         }else if sender.tag == 3{
             self.spot3.setTitle("x", for: .normal)
+            spot3.isEnabled = false
         }else if sender.tag == 4{
             self.spot4.setTitle("x", for: .normal)
+            spot4.isEnabled = false
         }else if sender.tag == 5{
             self.spot5.setTitle("x", for: .normal)
+            spot5.isEnabled = false
         }else if sender.tag == 6{
             self.spot6.setTitle("x", for: .normal)
+            spot6.isEnabled = false
         }else if sender.tag == 7{
             self.spot7.setTitle("x", for: .normal)
+            spot7.isEnabled = false
         }else if sender.tag == 8{
             self.spot8.setTitle("x", for: .normal)
+            spot8.isEnabled = false
         }else if sender.tag == 9{
             self.spot9.setTitle("x", for: .normal)
+            spot9.isEnabled = false
         }
     
         // update the appearance of the board for computer's choice
@@ -137,22 +157,31 @@ class ViewController: UIViewController {
     func markBoardForComputer(chosen: Int){
         if (chosen == 1){
             self.spot1.setTitle("o", for: .normal)
+            spot1.isEnabled = false
         }else if chosen == 2{
             self.spot2.setTitle("o", for: .normal)
+            spot2.isEnabled = false
         }else if chosen == 3{
             self.spot3.setTitle("o", for: .normal)
+            spot3.isEnabled = false
         }else if chosen == 4{
             self.spot4.setTitle("o", for: .normal)
+            spot4.isEnabled = false
         }else if chosen == 5{
             self.spot5.setTitle("o", for: .normal)
+            spot5.isEnabled = false
         }else if chosen == 6{
             self.spot6.setTitle("o", for: .normal)
+            spot6.isEnabled = false
         }else if chosen == 7{
             self.spot7.setTitle("o", for: .normal)
+            spot7.isEnabled = false
         }else if chosen == 8{
             self.spot8.setTitle("o", for: .normal)
+            spot8.isEnabled = false
         }else if chosen == 9{
             self.spot9.setTitle("o", for: .normal)
+            spot9.isEnabled = false
         }else{
             print("something went wrong")
         }
