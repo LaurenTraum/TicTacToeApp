@@ -13,17 +13,22 @@ class FirstPageViewController: UIViewController {
     
     @IBOutlet weak var whoFirst: UISegmentedControl!
     
-    @IBOutlet weak var difficulty: UISegmentedControl!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let whoFirst = self.whoFirst.selectedSegmentIndex
+        let defaults = UserDefaults.standard
+        defaults.set(whoFirst, forKey: "Who First")
         if let beginController = segue.destination as? ViewController{
             beginController.whoFirst = whoFirst
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let whoFirst = defaults.integer(forKey: "Who First")
+        self.whoFirst.selectedSegmentIndex = whoFirst
 
         // Do any additional setup after loading the view.
     }

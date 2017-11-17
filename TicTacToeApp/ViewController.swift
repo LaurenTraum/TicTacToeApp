@@ -13,6 +13,7 @@ import UIKit
 class ViewController: UIViewController {
     var game = TicTacToe()  //Whyhow
     var whoFirst = 0 // this means computer goes first
+    var difficulty = 0
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
             markBoardForComputer(chosen: chosen.1)
         }
         
+        
     }
     // call playGameComputerFirst from viewDidAppear if computer takes first turn
     
@@ -77,6 +79,16 @@ class ViewController: UIViewController {
         spot8.tag = 8
         spot9.tag = 9
         
+        spot1.adjustsImageWhenDisabled = false
+        spot2.adjustsImageWhenDisabled = true
+        spot3.adjustsImageWhenDisabled = true
+        spot4.adjustsImageWhenDisabled = true
+        spot5.adjustsImageWhenDisabled = true
+        spot6.adjustsImageWhenDisabled = true
+        spot7.adjustsImageWhenDisabled = true
+        spot8.adjustsImageWhenDisabled = true
+        spot9.adjustsImageWhenDisabled = true
+        
         self.spot1.setTitle("-", for: .normal)
         self.spot2.setTitle("-", for: .normal)
         self.spot3.setTitle("-", for: .normal)
@@ -91,6 +103,7 @@ class ViewController: UIViewController {
             let chosen = game.playGameComputerFirst()
             markBoardForComputer(chosen: chosen.1)
         }
+        
     }
     
     
@@ -101,13 +114,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeSettings(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Change Setting?", message: "This will restart your game", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
-            self.dismiss(animated: true, completion: nil)})
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion:nil)
+        if label.text == "keep on going!!"{
+            let alertController = UIAlertController(title: "Change Setting?", message: "This will restart your game", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
+                self.dismiss(animated: true, completion: nil)})
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion:nil)
+        }else{
+            self.dismiss(animated: true, completion: nil)
+        }
         
     }
     
@@ -148,9 +165,23 @@ class ViewController: UIViewController {
             self.spot9.setTitle("x", for: .normal)
             spot9.isEnabled = false
         }
-    
+        
         // update the appearance of the board for computer's choice
         markBoardForComputer(chosen: result.1)
+        
+        if result.0 != "keep on going!!"{
+            // fix
+                spot1.isEnabled = false
+                spot2.isEnabled = false
+                spot3.isEnabled = false
+                spot4.isEnabled = false
+                spot5.isEnabled = false
+                spot6.isEnabled = false
+                spot7.isEnabled = false
+                spot8.isEnabled = false
+                spot9.isEnabled = false
+            }
+        
     }
             
     

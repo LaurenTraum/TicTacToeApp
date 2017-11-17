@@ -49,6 +49,15 @@ class TicTacToe{
         computerDominion.insert(computerClaim)
         return computerClaim
     }
+    func getComputerClaimHard() -> Int {  //get and process computer turn
+        let i = Int(arc4random_uniform(UInt32(notTaken.count)))
+        let computerClaim = notTaken[i]
+        
+        taken.insert(computerClaim)  //look up
+        notTaken.remove(at: i)
+        computerDominion.insert(computerClaim)
+        return computerClaim
+    }
     //compare and choose winner
 
 
@@ -59,7 +68,7 @@ class TicTacToe{
             
         } else if (computerDominion.isSuperset(of: win1) || computerDominion.isSuperset(of: win2) || computerDominion.isSuperset(of: win3)) || computerDominion.isSuperset(of: win4) || computerDominion.isSuperset(of: win5) || computerDominion.isSuperset(of: win6) || computerDominion.isSuperset(of: win7) || computerDominion.isSuperset(of: win8){
             
-            return "The computer beat you. RESILLIANCE"
+            return "The computer beat you!"
             
         }else if notTaken.count == 0 {
             return "cats game"

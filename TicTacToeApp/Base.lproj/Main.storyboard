@@ -134,7 +134,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgS-Sd-W9l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgS-Sd-W9l">
                                 <rect key="frame" x="16" y="110" width="343" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="EDR-gy-ib8"/>
@@ -209,19 +209,6 @@
                                     <segment title="Me first"/>
                                 </segments>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Ta-cs-Zzz">
-                                <rect key="frame" x="143" y="310" width="89" height="29"/>
-                                <segments>
-                                    <segment title="easy"/>
-                                    <segment title="Hard"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnk-Yn-RCO">
-                                <rect key="frame" x="153" y="276" width="69" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-qB-s62">
                                 <rect key="frame" x="168" y="403" width="39" height="30"/>
                                 <state key="normal" title="Begin"/>
@@ -233,13 +220,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dmm-DK-gQN" firstAttribute="centerY" secondItem="iuC-WM-ETZ" secondAttribute="centerY" constant="-138" id="0ke-Vn-XqS"/>
-                            <constraint firstItem="6Ta-cs-Zzz" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="7Ha-SA-Df3"/>
                             <constraint firstItem="Dmm-DK-gQN" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="Iim-Bx-xBa"/>
-                            <constraint firstItem="6Ta-cs-Zzz" firstAttribute="centerY" secondItem="iuC-WM-ETZ" secondAttribute="centerY" constant="-9.5" id="XCK-wS-OOe"/>
                             <constraint firstItem="DQG-qB-s62" firstAttribute="centerY" secondItem="iuC-WM-ETZ" secondAttribute="centerY" constant="84.5" id="ZCb-5s-OCz"/>
                             <constraint firstItem="DQG-qB-s62" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="bHa-Lm-RX1"/>
-                            <constraint firstItem="xnk-Yn-RCO" firstAttribute="centerY" secondItem="iuC-WM-ETZ" secondAttribute="centerY" constant="-47" id="bQG-ne-ENb"/>
-                            <constraint firstItem="xnk-Yn-RCO" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="mjp-HK-P2z"/>
                             <constraint firstItem="DiY-Ss-DU4" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="p4W-gi-V7y"/>
                             <constraint firstItem="DQG-qB-s62" firstAttribute="centerX" secondItem="iuC-WM-ETZ" secondAttribute="centerX" id="ue4-pt-be7"/>
                             <constraint firstItem="DiY-Ss-DU4" firstAttribute="centerY" secondItem="iuC-WM-ETZ" secondAttribute="centerY" constant="-101.5" id="vV9-4X-Lb3"/>
@@ -247,7 +230,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="wO5-Mc-xED"/>
                     <connections>
-                        <outlet property="difficulty" destination="6Ta-cs-Zzz" id="2Zn-UP-7FF"/>
                         <outlet property="whoFirst" destination="DiY-Ss-DU4" id="WFE-VX-I2C"/>
                     </connections>
                 </viewController>
